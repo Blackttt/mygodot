@@ -12,7 +12,8 @@ func _physics_process(delta):
 		state_machine.request_state_change("Roll")
 		
 	# 检测是否需要移动
-	var moving := Input.get_vector("move_down","move_left","move_right","move_up")
+	var moving := Input.get_vector("move_left","move_right","move_up","move_down")
 
 	if moving:
+		print("[Player] 移动键按下")
 		state_machine.request_state_change("Move")

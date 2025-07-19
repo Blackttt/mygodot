@@ -10,7 +10,7 @@ func exit():
 	character.velocity = Vector2.ZERO
 
 func physics_update(delta):
-	var input_vector = Input.get_vector("move_down","move_left","move_right","move_up")
+	var input_vector = Input.get_vector("move_left","move_right","move_up","move_down")
 
 	if input_vector == Vector2.ZERO:
 		state_machine.request_state_change("Idle")
