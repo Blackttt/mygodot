@@ -1,7 +1,7 @@
 class_name AttackState
 extends State  # 确保继承你之前写的 State.gd 父类
 
-func enter():
+func enter(payload: Dictionary = {}):
 	print("[AttackState] 进入攻击状态")
 	character.play_anim("attack")
 

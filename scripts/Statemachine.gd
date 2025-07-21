@@ -24,18 +24,23 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_update(delta)
 		
-func request_state_change(name: String):
+func request_state_change(name: String, payload: Dictionary = {}):
 	if not states.has(name):
 		push_error("[StateMachine] 状态不存在：%s" % name)
 		return
-		
+
+	# 如果请求的状态就是当前状态...
 	if current_state and current_state.name == name:
-		return  # 不重复切换同一个状态
-		
+		# ...那就调用它的 update 方法，把新数据传进去，然后返回
+		if current_state.has_method("update"):
+			current_state.update_data(payload)
+		return
+
+	# 如果是不同的状态，才执行完整的切换流程
 	if current_state:
 		current_state.exit()
 	var old_state_name = current_state.name if current_state != null else "null"
 	print("[StateMachine] 状态切换：%s → %s" % [old_state_name, name])
 
 	current_state = states[name]
-	current_state.enter()
+	current_state.enter(payload)
