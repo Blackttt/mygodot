@@ -1,14 +1,12 @@
+# StateMachine.gd
 extends Node
 class_name StateMachine
 
 var states: Dictionary = {}
 var current_state: State = null
 
-var transition_locked: bool = false
-var pending_state_name: String = ""
-
-func _ready():
-	# 注册所有子状态
+func _ready() -> void:
+	# 注册所有子状态，这个逻辑保持不变，非常完美
 	for child in get_children():
 		if child is State:
 			states[child.name] = child
@@ -16,27 +14,27 @@ func _ready():
 			child.character = get_parent()
 	print("[StateMachine] 状态列表已初始化：", states.keys())
 
-func _process(delta):
+# process函数保持不变，用于处理非物理逻辑
+func _process(delta: float) -> void:
 	if current_state:
 		current_state.update(delta)
 
+# 【核心修改】现在由状态机自己来驱动当前状态的物理更新
 func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_update(delta)
 		
+# 状态切换的请求函数，保持不变
 func request_state_change(name: String, payload: Dictionary = {}):
 	if not states.has(name):
 		push_error("[StateMachine] 状态不存在：%s" % name)
 		return
 
-	# 如果请求的状态就是当前状态...
 	if current_state and current_state.name == name:
-		# ...那就调用它的 update 方法，把新数据传进去，然后返回
-		if current_state.has_method("update"):
+		if current_state.has_method("update_data"):
 			current_state.update_data(payload)
 		return
 
-	# 如果是不同的状态，才执行完整的切换流程
 	if current_state:
 		current_state.exit()
 	var old_state_name = current_state.name if current_state != null else "null"

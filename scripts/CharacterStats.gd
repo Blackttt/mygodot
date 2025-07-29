@@ -1,14 +1,11 @@
+# CharacterStats.gd
 extends Resource
 class_name CharacterStats
+
+# 【新增信号】当生命值改变时发出喵
+signal hp_changed(current_hp_value: int, max_hp_value: int)
 
 @export var max_hp: int = 100
 @export var attack: int = 10
 @export var defense: int = 5
-
-var speed := 100
-var current_hp: int = max_hp
-
-func take_damage(amount: int) -> void:
-	var damage = max(amount - defense, 1)
-	current_hp = max(current_hp - damage, 0)
-	print("[Stats] 受到伤害：%d，当前HP：%d" % [damage, current_hp])
+@export var speed: int = 100 # 速度也属于Stats，但由MovementComponent使用
