@@ -9,3 +9,4 @@ func exit(): pass
 func update(delta: float): pass
 func update_data(payload: Dictionary = {}): pass
 func physics_update(delta: float): pass
+func _on_animation_finished(anim_name: StringName) -> void: pass

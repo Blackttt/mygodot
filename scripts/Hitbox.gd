@@ -5,7 +5,7 @@ class_name Hitbox
 # 自定义信号：当命中Hurtbox时发出。
 signal hurtbox_hit(hurtbox)
 
-@export var damage: int = 10
+@export var damage: int
 
 # 节点准备就绪时，用代码将内置信号连接到处理函数。
 func _ready() -> void:

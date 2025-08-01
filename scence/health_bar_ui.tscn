@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm6on3aqxfrgm"]
+
+[ext_resource type="Script" uid="uid://br18gm6gk2cvd" path="res://scripts/health_bar_ui.gd" id="1_6e1r0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e1r0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omop5"]
+bg_color = Color(1, 0.443684, 0.375096, 1)
+
+[node name="HealthBarUI" type="CanvasLayer"]
+script = ExtResource("1_6e1r0")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -418.0
+offset_top = -94.0
+offset_right = 418.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_6e1r0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_omop5")

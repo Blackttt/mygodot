@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://y5mrbfa2kd4b"]
+
+[ext_resource type="Script" uid="uid://cwhl8eq2qkeih" path="res://scripts/WorldTime.gd" id="1_h1kcx"]
+[ext_resource type="Resource" uid="uid://8smrj4uydu8v" path="res://source/my_world_settings.tres" id="2_pypeb"]
+
+[node name="WorldTime" type="Node"]
+script = ExtResource("1_h1kcx")
+settings = ExtResource("2_pypeb")

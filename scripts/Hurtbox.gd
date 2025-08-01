@@ -13,5 +13,6 @@ func _ready() -> void:
 
 # 当有Area2D进入时，此函数被调用。
 func _on_area_entered(hitbox: Hitbox) -> void:
+	print("[Hurtbox] hurtbox检测到hitbox")
 	# 发射我们自定义的"hit"信号。
 	emit_signal("hit", hitbox)

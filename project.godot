@@ -15,6 +15,14 @@ run/main_scene="uid://hjcg0c8g3ksx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+WorldTime="*res://scence/WorldTime.tscn"
+
+[display]
+
+window/size/borderless=true
+
 [input]
 
 attack={

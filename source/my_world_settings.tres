@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WorldSettings" load_steps=2 format=3 uid="uid://8smrj4uydu8v"]
+
+[ext_resource type="Script" uid="uid://hg42o2a0vfpf" path="res://scripts/world_settings.gd" id="1_xnoa4"]
+
+[resource]
+script = ExtResource("1_xnoa4")
+real_minutes_per_game_day = 10.0
+start_year = 1
+start_month = 1
+start_day = 1
+days_in_months = Array[int]([30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30])
+metadata/_custom_type_script = "uid://hg42o2a0vfpf"

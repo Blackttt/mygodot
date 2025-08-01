@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://hjcg0c8g3ksx"]
+[gd_scene load_steps=6 format=3 uid="uid://hjcg0c8g3ksx"]
 
 [ext_resource type="PackedScene" uid="uid://reu0snnjqyk5" path="res://scence/Player.tscn" id="1_5tgm5"]
 [ext_resource type="Script" uid="uid://4b855yxen2il" path="res://scripts/main_scene.gd" id="1_ankc6"]
 [ext_resource type="TileSet" uid="uid://bm0k5ygv3soi5" path="res://source/tileset.tres" id="2_is44c"]
 [ext_resource type="PackedScene" uid="uid://dm6on3aqxfrgm" path="res://scence/health_bar_ui.tscn" id="3_d7nn0"]
 [ext_resource type="PackedScene" uid="uid://y5mrbfa2kd4b" path="res://scence/WorldTime.tscn" id="5_m0dwf"]
-[ext_resource type="PackedScene" uid="uid://diew6etsu2l1n" path="res://scence/time_ui.tscn" id="6_puo6g"]
-[ext_resource type="PackedScene" uid="uid://brpqy4qhiln1e" path="res://scence/sandbag.tscn" id="7_1s45r"]
 
 [node name="Node" type="Node2D"]
 script = ExtResource("1_ankc6")
@@ -28,8 +26,3 @@ y_sort_enabled = false
 [node name="HealthBarUI" parent="." instance=ExtResource("3_d7nn0")]
 
 [node name="WorldTime" parent="." instance=ExtResource("5_m0dwf")]
-
-[node name="time_ui" parent="." instance=ExtResource("6_puo6g")]
-
-[node name="Sandbag" parent="." instance=ExtResource("7_1s45r")]
-position = Vector2(648, 353)
