@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_p0du1")
-max_hp = 100
+max_hp = 50
 attack = 10
 defense = 5
 speed = 50

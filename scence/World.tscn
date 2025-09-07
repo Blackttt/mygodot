@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://hjcg0c8g3ksx"]
+[gd_scene load_steps=10 format=3 uid="uid://hjcg0c8g3ksx"]
 
 [ext_resource type="PackedScene" uid="uid://reu0snnjqyk5" path="res://scence/Player.tscn" id="1_5tgm5"]
 [ext_resource type="Script" uid="uid://4b855yxen2il" path="res://scripts/main_scene.gd" id="1_ankc6"]
 [ext_resource type="TileSet" uid="uid://bm0k5ygv3soi5" path="res://source/tileset.tres" id="2_is44c"]
 [ext_resource type="PackedScene" uid="uid://dm6on3aqxfrgm" path="res://scence/health_bar_ui.tscn" id="3_d7nn0"]
+[ext_resource type="PackedScene" uid="uid://bqtjxf7scw5tr" path="res://scence/NPC.tscn" id="3_i0mmk"]
+[ext_resource type="Resource" uid="uid://boes4h2xqrxia" path="res://source/CharacterStats.tres" id="4_ss663"]
 [ext_resource type="PackedScene" uid="uid://y5mrbfa2kd4b" path="res://scence/WorldTime.tscn" id="5_m0dwf"]
 [ext_resource type="PackedScene" uid="uid://diew6etsu2l1n" path="res://scence/time_ui.tscn" id="6_puo6g"]
 [ext_resource type="PackedScene" uid="uid://brpqy4qhiln1e" path="res://scence/sandbag.tscn" id="7_1s45r"]
@@ -22,8 +24,11 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(1114142, 4, 5, 1507352, 4, 5, 1703971, 4, 5, 1703989, 4, 5, 1114164, 4, 5, 1048618, 4, 5, 1769499, 655364, 7, 1245207, 655364, 7, 1114149, 655364, 7, 1179694, 655364, 7, 1703983, 655364, 7, 1638459, 655364, 7, 851987, 4, 5, 655388, 4, 5, 655389, 4, 5, 589867, 4, 5, 524341, 4, 5, 655425, 4, 5, 1966143, 4, 5, 2293812, 4, 5, 2097193, 4, 5, 2293793, 4, 5, 2162709, 4, 5, 327693, 4, 5, 327683, 4, 5, 1376261, 4, 5, 2097160, 4, 5, 2555911, 4, 5, 2424896, 4, 5, 1966149, 4, 5, 1900613, 4, 5, 1179715, 4, 5, 1114179, 4, 5, 1114180, 4, 5, 65605, 4, 5, 524326, 4, 5, 983048, 4, 5, 1703947, 4, 5, 2424848, 524292, 6, 2228229, 524292, 6, 1507334, 524292, 6, 983051, 524292, 6, 720912, 524292, 6, 524294, 524292, 6, 458775, 524292, 6, 458791, 524292, 6, 458792, 524292, 6, 458793, 524292, 6, 524342, 524292, 6, 524343, 524292, 6, 524351, 524292, 6, 524352, 524292, 6, 1048643, 524292, 6, 2424901, 524292, 6, 2555958, 524292, 6, 2424871, 524292, 6, 2555936, 524292, 6, 2424851, 524292, 6, 2031643, 524292, 6, 2162729, 524292, 6, 2097209, 524292, 6, 2097210, 524292, 6, 983097, 524292, 6, 917560, 524292, 6, 655395, 524292, 6, 196652, 524292, 6, 655410, 524292, 6, 131101, 524292, 6, 1310734, 524292, 6)
 
+[node name="NPC" parent="TileMap" instance=ExtResource("3_i0mmk")]
+
 [node name="Player" parent="." instance=ExtResource("1_5tgm5")]
 y_sort_enabled = false
+stats_resource = ExtResource("4_ss663")
 
 [node name="HealthBarUI" parent="." instance=ExtResource("3_d7nn0")]
 

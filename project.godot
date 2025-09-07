@@ -58,3 +58,7 @@ move_left={
 2d_physics/layer_3="玩家 Hitbox"
 2d_physics/layer_4="敌人 Hurtbox"
 2d_physics/layer_5="敌人 Hitbox"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

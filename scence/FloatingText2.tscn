@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://6fbr2doe5y15"]
+[gd_scene load_steps=7 format=3 uid="uid://6fbr2doe5y15"]
 
 [ext_resource type="Script" uid="uid://bjhwwnvwoh502" path="res://scripts/floating_text_2.gd" id="1_av1k4"]
+[ext_resource type="FontFile" uid="uid://3wk8hbtbyb3w" path="res://Fonts/Silver.ttf" id="2_jeadv"]
+
+[sub_resource type="FontVariation" id="FontVariation_6w86l"]
+base_font = ExtResource("2_jeadv")
 
 [sub_resource type="Animation" id="Animation_ajnty"]
-length = 0.001
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,6 +82,8 @@ _data = {
 }
 
 [node name="FloatingText2" type="Node2D"]
+z_index = 9
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_av1k4")
 
 [node name="Mover" type="Node2D" parent="."]
@@ -89,7 +95,8 @@ offset_right = 14.0
 offset_bottom = 7.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 5
+theme_override_fonts/font = SubResource("FontVariation_6w86l")
+theme_override_font_sizes/font_size = 19
 text = "2"
 horizontal_alignment = 1
 

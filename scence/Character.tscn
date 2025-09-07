@@ -1,12 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://dcqxgrenff7po"]
+[gd_scene load_steps=24 format=3 uid="uid://dcqxgrenff7po"]
 
-[ext_resource type="Script" uid="uid://b1sldgfir8xea" path="res://scripts/Character.gd" id="1_0opug"]
+[ext_resource type="Script" uid="uid://b1sldgfir8xea" path="res://scripts/Character.gd" id="1_bvy6j"]
 [ext_resource type="PackedScene" uid="uid://fl1ut4iyqgk5" path="res://scence/Hurtbox.tscn" id="2_1x5tm"]
-[ext_resource type="Resource" uid="uid://boes4h2xqrxia" path="res://source/CharacterStats.tres" id="2_k2q11"]
 [ext_resource type="Script" uid="uid://10p7h32suivx" path="res://scripts/HealthComponent.gd" id="3_1x5tm"]
 [ext_resource type="Script" uid="uid://ddcjtv2c3yik5" path="res://scripts/AnimationController.gd" id="4_4c04j"]
 [ext_resource type="Script" uid="uid://b71271uu872c" path="res://scripts/AttackComponent.gd" id="5_fdv63"]
 [ext_resource type="Script" uid="uid://b4rxdple72g2" path="res://scripts/MovementComponent.gd" id="6_bvy6j"]
+[ext_resource type="Script" uid="uid://8qxdp14d32l" path="res://scripts/Statemachine.gd" id="7_k2q11"]
+[ext_resource type="Script" uid="uid://c76lajwjlsccf" path="res://scripts/State.gd" id="8_pwx3p"]
 
 [sub_resource type="Animation" id="Animation_cxr5p"]
 length = 0.001
@@ -428,8 +429,7 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_0opug")
-stats_resource = ExtResource("2_k2q11")
+script = ExtResource("1_bvy6j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 offset = Vector2(0.5, 0)
@@ -455,3 +455,27 @@ script = ExtResource("5_fdv63")
 
 [node name="MovementComponent" type="Node" parent="."]
 script = ExtResource("6_bvy6j")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("7_k2q11")
+metadata/_custom_type_script = "uid://8qxdp14d32l"
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("8_pwx3p")
+metadata/_custom_type_script = "uid://c76lajwjlsccf"
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("8_pwx3p")
+metadata/_custom_type_script = "uid://c76lajwjlsccf"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("8_pwx3p")
+metadata/_custom_type_script = "uid://c76lajwjlsccf"
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("8_pwx3p")
+metadata/_custom_type_script = "uid://c76lajwjlsccf"
+
+[node name="Hit" type="Node" parent="StateMachine"]
+script = ExtResource("8_pwx3p")
+metadata/_custom_type_script = "uid://c76lajwjlsccf"
